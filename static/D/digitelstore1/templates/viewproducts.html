@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIEW PRODUCTS</title>
+</head>
+<body>
+<table class="table">
+    <tr>
+        <th>product name</th>
+        <th>cat</th>
+        <th>cost</th>
+        <th>quality</th>
+        <th>dec</th>
+        <th>pimage</th>
+
+    </tr>
+    {% for data in data %}
+    <tr>
+        <td>{{ data.pname}}</td>
+        <td>{{ data.pcat}}</td>
+        <td>{{ data.pcost }}</td>
+        <td>{{ data.pquality}}</td>
+        <td>{{ data.pdec}}</td>
+        <td><img src="{{ data.pimage.url }}" width="90px" height="100px"></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
